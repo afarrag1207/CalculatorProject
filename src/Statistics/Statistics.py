@@ -1,11 +1,11 @@
 from Calculator.Calculator import Calculator
 from CSVReader.CsvReader import CsvReader
-from Mean import mean
-from Mode import mod
-from Zscore import zscore
-from Vpp import var_pop_prop
-from Psd import psd
-from Median import median
+from Statistics.Mean import mean
+from Statistics.Mode import mod
+from Statistics.Zscore import zscore
+from Statistics.Vpp import var_pop_prop
+from Statistics.Psd import psd
+from Statistics.Median import median
 
 class Statistics(Calculator):
     data = []
@@ -36,7 +36,8 @@ def __init__(self, filepath):
     def var_pop_proportion(self, a):
          self.result = var_pop_prop(a)
          return self.result
-        
+
+
 
     
 
