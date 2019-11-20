@@ -1,5 +1,5 @@
 # CalculatorProject
-
+[![Build Status](https://travis-ci.org/afarrag1207/CalculatorProject.svg?branch=master)](https://travis-ci.org/afarrag1207/CalculatorProject)
 
 ## Tasks:
 
