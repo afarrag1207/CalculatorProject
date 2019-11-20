@@ -1,5 +1,5 @@
-from Calculator.Division import division
-from Calculator.Subtraction import subtraction
+from Calculator.division import division
+from Calculator.subtraction import subtraction
 from Statistics.Mean import mean
 from Statistics.Psd import psd
 

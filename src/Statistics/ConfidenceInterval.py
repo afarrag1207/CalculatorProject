@@ -4,7 +4,7 @@ from Calculator.division import division
 from Calculator.multiplication import multiplication
 from Calculator.Squareroot import squareroot
 from Statistics.Mean import mean
-from Statistics.populationStandardDeviation import Psd
+from Statistics.Psd import Psd
 
 
 def confidence_interval(data):

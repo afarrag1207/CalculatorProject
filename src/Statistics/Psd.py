@@ -1,8 +1,8 @@
-from Addition import addition
-from Division import division
-from Square import squaree
-from Square_rot import squar_rot
-from Subtraction import subtraction
+from Calculator.addition import addition
+from Calculator.division import division
+from Calculator.Square import square
+from Calculator.Squareroot import squareroot
+from Calculator.subtraction import subtraction
 from Mean import mean
 
 
@@ -13,7 +13,7 @@ def psd(numbers):
     total = 0
     for numb in numbers:
         result2 = subtraction(numb, result)
-        sq = squaree(result2)
+        sq = square(result2)
         total = addition(total, sq)
         result3 = division(num_values, total)
-    return squar_rot(result3)
+    return squareroot(result3)

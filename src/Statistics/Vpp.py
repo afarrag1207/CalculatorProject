@@ -1,7 +1,7 @@
 from Statistics.Proportion import proportion
-from Calculator.Subtraction import subtraction
-from Calculator.Multiplication import multiplication
-from Calculator.Division import division
+from Calculator.subtraction import subtraction
+from Calculator.multiplication import multiplication
+from Calculator.division import division
 
 
 def var_pop_prop(data):
