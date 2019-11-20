@@ -4,12 +4,12 @@ from Calculator.division import division
 from Calculator.Square import square
 from Calculator.squareroot import squareroot
 from Calculator.subtraction import subtraction
-from Sample import sample
+from Sample import Getsample
 from Mean import mean
 def ssd(data):
     total = 0
     sample =  random.randint(1, len(data))
-    new_sample = sample(data, sample)
+    new_sample = Getsample(data, sample)
     new_mean = mean(new_sample)
     for numb in new_sample:
         result = subtraction(numb, new_mean)
