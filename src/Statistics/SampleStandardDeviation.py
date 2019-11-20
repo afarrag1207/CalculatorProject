@@ -4,8 +4,8 @@ from Calculator.division import division
 from Calculator.Square import square
 from Calculator.squareroot import squareroot
 from Calculator.subtraction import subtraction
-from Sample import Getsample
-from Mean import mean
+from Statistics.Sample import Getsample
+from Statistics.Mean import mean
 def ssd(data):
     total = 0
     sample =  random.randint(1, len(data))

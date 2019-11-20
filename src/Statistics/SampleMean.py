@@ -1,9 +1,9 @@
 from Statistics.Mean import mean
-from Statistics.sample import Sample
+from Statistics.Sample import Getsample
 
 
 def samplemean(list):
     s=50
-    r = Sample(list,s)
+    r = Getsample(list,s)
     c = mean(r)
     return c

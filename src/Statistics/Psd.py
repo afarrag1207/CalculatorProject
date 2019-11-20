@@ -3,7 +3,7 @@ from Calculator.division import division
 from Calculator.Square import square
 from Calculator.Squareroot import squareroot
 from Calculator.subtraction import subtraction
-from Mean import mean
+from Statistics.Mean import mean
 
 
 def psd(numbers):
