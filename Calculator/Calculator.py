@@ -1,9 +1,10 @@
-from addition import addition
-from subtraction import subtraction
-from multiplication import multiplication
-from division import division
-from Square import square
-from Squareroot import squareroot
+from Calculator.addition import addition
+from Calculator.subtraction import subtraction
+from Calculator.multiplication import multiplication
+from Calculator.division import division
+from Calculator.Square import square
+from Calculator.Squareroot import squareroot
+
 
 class Calculator:
     result = 0
