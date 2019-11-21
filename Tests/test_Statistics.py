@@ -3,6 +3,7 @@ import unittest
 from Statistics.Statistics import Statistics
 from CSVReader.CSVReader import CsvReader
 from CSVReader.Data import Data
+from CSVReader.fetchrawdata import fetchrawdata
 
 
 class MyTestCase(unittest.TestCase):
@@ -54,6 +55,26 @@ class MyTestCase(unittest.TestCase):
         for column in answers:
             self.assertEqual(self.statistics.z_score(values), (column['zscore']))
 
+    def test_vsp(self):
+        test_data = CsvReader("Tests/Data/datapoints.csv")
+        values = fetchrawdata(test_data, 'value')
+        x = self.statistics.vsp(values)
+        self.assertEqual(x, x)
+
+    def test_confidence_interval(self):
+        test_data = CsvReader("Tests/Data/datapoints.csv")
+        values = fetchrawdata(test_data, 'value')
+        answers = CsvReader('Tests/Data/answers.csv').data
+        for column in answers:
+            self.assertEqual(self.statistics.conf_interval(values),
+                             (float(column['conf_int_high']), float(column['conf_int_low'])))
+
+    def test_proportion(self):
+        test_data = CsvReader("Tests/Data/datapoints.csv")
+        answers = CsvReader("Tests/Data/answers.csv").data
+        values = fetchrawdata(test_data, 'value')
+        for column in answers:
+            self.assertEqual(self.statistics.proportion(values), float((column['proportion'])))
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,6 +1,6 @@
 from Statistics.Zscore import zscore
 
-def P_value(data):
+def pvalue(data):
     data = []
     n = len(data)
     score = zscore()

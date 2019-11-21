@@ -7,7 +7,7 @@ from Statistics.Mean import mean
 from Statistics.Psd import Psd
 
 
-def confidence_interval(data):
+def confidenceinterval(data):
     x = mean(data)
     dev = Psd(data)
     z = 1.96  # for 95% confidence
