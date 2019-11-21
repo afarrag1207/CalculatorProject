@@ -4,12 +4,12 @@ from Calculator.division import division
 from Calculator.multiplication import multiplication
 from Calculator.Squareroot import squareroot
 from Statistics.Mean import mean
-from Statistics.Psd import Psd
+from Statistics.Psd import psd
 
 
-def confidenceinterval(data):
+def conf_interval(data):
     x = mean(data)
-    dev = Psd(data)
+    dev = psd(data)
     z = 1.96  # for 95% confidence
 
     standard_error = division(dev, squareroot(len(data)))

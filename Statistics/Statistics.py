@@ -6,7 +6,7 @@ from Statistics.Zscore import zscore
 from Statistics.Vpp import var_pop_prop
 from Statistics.Median import median
 from Statistics.Proportion import proportion
-from Statistics.ConfidenceInterval import confidenceinterval
+from Statistics.ConfidenceInterval import conf_interval
 from Statistics.PValue import pvalue
 from Statistics.Vsp import vsp
 from Statistics.Psd import psd
@@ -32,11 +32,11 @@ class Statistics(Calculator):
         self.result = mod(mo)
         return self.result
 
-    def psd(self, po):
+    def Psd(self, po):
         self.result = psd(po)
         return self.result
 
-    def z_score(self, a):
+    def zscore(self, a):
         self.result = zscore(a)
 
     def var_pop_proportion(self, a):
@@ -48,7 +48,7 @@ class Statistics(Calculator):
         return self.result
 
     def conf_interval(self, a):
-        self.result = confidenceinterval(a)
+        self.result = conf_interval(a)
         return self.result
 
     def pvalue(self, a):

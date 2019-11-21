@@ -5,11 +5,11 @@ from Statistics.Psd import psd
 
 
 def zscore(numbers):
-    row_value = 484
+    row_value = 151
     sd = psd(numbers)
     m = mean(numbers)
-    result = subtraction(m, row_value)
-    z_score = division(sd, result)
+    result = subtraction(row_value, m)
+    z_score = division(result, sd)
+    print(z_score)
     return z_score
-
 
