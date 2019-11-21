@@ -1,6 +1,6 @@
 import unittest
 
-from CSVReader.CSVReader import CsvReader, ClassFactory
+from CSVReader.CSVReader import CsvReader
 from Calculator.Calculator import Calculator
 
 

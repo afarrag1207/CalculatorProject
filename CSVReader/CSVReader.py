@@ -1,11 +1,9 @@
 import csv
-from pathlib import Path
-from pprint import pprint
 from Fileutilities.absolutepath import absolutepath
 
 
-#def ClassFactory(class_name, dictionary):
-    #return type(class_name, (object,), dictionary)
+# def ClassFactory(class_name, dictionary):
+#    return type(class_name, (object,), dictionary)
 
 
 class CsvReader:
@@ -20,8 +18,8 @@ class CsvReader:
                 self.data.append(row)
         pass
 
-    #def return_data_as_objects(self, class_name):
-       # objects = []
-        #for row in self.data:
-            #objects.append(ClassFactory(class_name, row))
-        #return objects
+#    def return_data_as_objects(self, class_name):
+#        objects = []
+#        for row in self.data:
+#            objects.append(ClassFactory(class_name, row))
+#        return objects
