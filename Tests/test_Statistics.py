@@ -3,7 +3,6 @@ from pprint import pprint
 from Statistics.Statistics import Statistics
 from CSVReader.CSVReader import CsvReader
 from CSVReader.Data import Data
-from CSVReader.Data import Data
 
 
 class MyTestCase(unittest.TestCase):

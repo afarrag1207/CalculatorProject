@@ -4,12 +4,12 @@ from Statistics.Mean import mean
 from Statistics.Mode import mod
 from Statistics.Zscore import zscore
 from Statistics.Vpp import var_pop_prop
-from Statistics.Psd import psd
 from Statistics.Median import median
 from Statistics.Proportion import proportion
 from Statistics.ConfidenceInterval import confidenceinterval
 from Statistics.PValue import pvalue
 from Statistics.Vsp import vsp
+from Statistics.Psd import psd
 
 
 class Statistics(Calculator):
