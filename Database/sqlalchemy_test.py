@@ -34,6 +34,25 @@ class Address(Base):
     # creates the relationship between the person and addresses.  backref adds a property to the Person class to retrieve addresses
     person = relationship("Person", backref="addresses")
 
+class Item(Base):
+    __tablename__ = 'Item'
+    # Here we define columns for the table Item
+    # Notice that each column is also a normal Python instance attribute.
+    id = Column(Integer, primary_key=True)
+    name = Column(String(250), nullable=False)
+
+class Order(Base):
+    __tablename__ = 'Order'
+    # Here we define columns for the table order.
+    # Notice that each column is also a normal Python instance attribute.
+    id = Column(Integer, primary_key=True)
+    Line_item1 = Column(String(250))
+    line_item2 = Column(String(250))
+    line_item3 = Column(String(250), nullable=False)
+    # creates the field to store the person id
+    Order_id = Column(Integer, ForeignKey('order.id'))
+    # creates the relationship between the Item and order.  backref adds a property to the Item class to retrieve orders
+    order = relationship("Item", backref="Order")
 
 # this creates all tables in the engine, equivalent to "create table"
 Base.metadada.bind = engine
@@ -113,4 +132,17 @@ i8 = Item(name='Water Bottle', cost_price=20.89, selling_price=25, quantity=50)
 session.add_all([i1, i2, i3, i4, i5, i6, i7, i8])
 session.commit()
 
+# Creating orders
 
+o1 = Order(Person=new_person1)
+o2 = Order(Person=new_person1)
+
+line_item1 = OrderLine(order=o1, item=i1, quantity=3)
+line_item2 = OrderLine(order=o1, item=i2, quantity=2)
+line_item3 = OrderLine(order=o2, item=i1, quantity=1)
+line_item4 = OrderLine(order=o2, item=i2, quantity=4)
+
+session.add_all([o1, o2])
+
+session.new
+session.commit()
