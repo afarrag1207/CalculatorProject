@@ -144,5 +144,28 @@ line_item4 = OrderLine(order=o2, item=i2, quantity=4)
 
 session.add_all([o1, o2])
 
-session.new
+
 session.commit()
+
+# Querying Data
+session.query(Person).all()
+
+pprint(session.query(Person))
+
+q = session.query(Person)
+
+for c in q:
+    pprint(c.id, c.first_name)
+
+session.query(Person.id, Person.first_name).all()
+
+session.query(Person).count() # get the total number of records in the Person table
+session.query(Item).count()  # get the total number of records in the items table
+session.query(Order).count()  # get the total number of records in the orders table
+
+session.commit()
+
+
+
+
+
