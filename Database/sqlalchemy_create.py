@@ -1,6 +1,7 @@
+# This Python file uses the following encoding: utf-8
 import sqlite3
 
-conn = sqlite3.connect("/web/SQL-Data/sqlalchemy_example.db")
+conn = sqlite3.connect('/web/Sqlite-Data/example.db')
 
 c = conn.cursor()
 c.execute('''
