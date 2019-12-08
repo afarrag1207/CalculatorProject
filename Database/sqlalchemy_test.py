@@ -5,6 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import distinct
 from sqlalchemy import cast, Date, distinct, union
+from sqlalchemy import text
 from pprint import pprint
 
 # Creating an engine so the data can be stored in a local directoy
@@ -222,4 +223,13 @@ session.query(Item).filter(
 ).delete(synchronize_session='fetch')
 session.commit()
 
+# Raw Queries
 
+
+session.query(Person).filter(text("first_name = 'Ali'")).all()
+
+session.query(Person).filter(text("town like 'Jersey City%'")).all()
+
+session.query(Person).filter(text("town like 'Jersey City%'")).order_by(text("first_name, id desc")).all()
+
+session.commit()
