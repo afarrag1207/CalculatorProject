@@ -4,6 +4,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import distinct
+from sqlalchemy import cast, Date, distinct, union
 from pprint import pprint
 
 # Creating an engine so the data can be stored in a local directoy
@@ -180,4 +181,12 @@ session.query(
 
 session.commit()
 
+#Casting
+
+session.query(
+    cast(func.pi(), Integer),
+    cast(func.pi(), Numeric(10,2)),
+    cast("2010-12-01", DateTime),
+    cast("2010-12-01", Date),
+).all()
 
