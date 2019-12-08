@@ -6,6 +6,9 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import distinct
 from sqlalchemy import cast, Date, distinct, union
 from sqlalchemy import text
+from sqlalchemy import update
+from sqlalchemy.exc import IntegrityError
+from datetime import datetime
 from pprint import pprint
 
 # Creating an engine so the data can be stored in a local directoy
@@ -232,4 +235,34 @@ session.query(Person).filter(text("town like 'Jersey City%'")).all()
 
 session.query(Person).filter(text("town like 'Jersey City%'")).order_by(text("first_name, id desc")).all()
 
+session.commit()
+
+# Transactions
+def dispatch_order(order_id):
+    # check whether order_id is valid or not
+    order = session.query(Order).get(order_id)
+
+    if not order:
+        raise ValueError("Invalid order id: {}.".format(order_id))
+
+    if order.date_shipped:
+        pprint("Order already shipped.")
+        return
+
+    try:
+        for i in order.order_lines:
+            i.item.quantity = i.item.quantity - i.quantity
+
+        order.date_shipped = datetime.now()
+        session.commit()
+        pprint("Transaction completed.")
+
+    except IntegrityError as e:
+        pprint(e)
+        pprint("Rolling back ...")
+        session.rollback()
+        pprint("Transaction failed.")
+
+
+dispatch_order(1)
 session.commit()
