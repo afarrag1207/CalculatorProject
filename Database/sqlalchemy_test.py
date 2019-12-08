@@ -208,3 +208,18 @@ session.query(Item).filter(
 ).update({"quantity": 60}, synchronize_session='fetch')
 session.commit()
 
+# Deleting data
+i = session.query(Item).filter(Item.name == 'Monitor').one()
+i
+session.delete(i)
+session.commit()
+
+# To delete multiple records at once use the delete() method of the Query object.
+
+
+session.query(Item).filter(
+    Item.name.ilike("W%")
+).delete(synchronize_session='fetch')
+session.commit()
+
+
