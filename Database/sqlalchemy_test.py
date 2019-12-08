@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import distinct
 from pprint import pprint
 
 # Creating an engine so the data can be stored in a local directoy
@@ -167,5 +168,16 @@ session.commit()
 
 # Dealing with Duplicates
 
+
+
+session.query(Person.town).filter(Person.id < 10).all()
+session.query(Person.town).filter(Person.id < 10).distinct().all()
+
+session.query(
+    func.count(distinct(Person.town)),
+    func.count(Person.town)
+).all()
+
+session.commit()
 
 
