@@ -45,3 +45,56 @@ SQLSession = sessionmaker(bind=engine)
 session = SQLSession()
 session.commit()
 
+# Inserting Data
+
+new_person1 = Person(first_name = 'Ali',
+                     last_name = 'Farrag',
+                     username = 'afarrag',
+                     email = 'af1207@gmail.com',
+                     address = '689 Bergen ave',
+                     town = 'Jersey City'
+                     )
+session.add(new_person1)
+
+new_person2 = Person(first_name = 'Ola',
+                     last_name = 'Farrag',
+                     username = 'ofarrag',
+                     email = 'ofarrag@gmail.com',
+                     address = '101 carlton club dr',
+                     town = 'Piscataway'
+                     )
+session.add(new_person2)
+
+new_person3 = Person(first_name = 'Joe',
+                     last_name = 'Smith',
+                     username = 'Jsmith',
+                     email = 'jsmith@gmail.com',
+                     address = '58 duncan ave',
+                     town = 'Jersey City'
+                     )
+session.add(new_person3)
+
+new_person4 = Person(first_name = 'Tan',
+                     last_name = 'lee',
+                     username = 'tlee',
+                     email = 'tlee@gmail.com',
+                     address = '16 Pine St',
+                     town = 'Dunellen'
+                     )
+new_person5 = Person(first_name = 'Kate',
+                     last_name = 'Mill',
+                     username = 'Kmill',
+                     email = 'kMiill@gmail.com',
+                     address = '10 Wood ave',
+                     town = 'Newark'
+                     )
+new_person6 = Person(first_name = 'Tony',
+                     last_name = 'Miller',
+                     username = 'tmiller',
+                     email = 'tmiller@example.com',
+                     address = '1662 Kinney Street',
+                     town = 'Wolfden'
+                     )
+session.add_all([new_person4, new_person5, new_person6])
+session.commit()
+
