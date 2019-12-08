@@ -165,7 +165,7 @@ session.query(Order).count()  # get the total number of records in the orders ta
 
 session.commit()
 
-
+# Dealing with Duplicates
 
 
 
