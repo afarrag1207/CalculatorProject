@@ -23,7 +23,7 @@ c.execute('''
           (id INTEGER PRIMARY KEY ASC, Line_item1 varchar(250), Line_item2 varchar(250),
            Line_item3 varchar(250) NOT NULL, person_id INTEGER NOT NULL,
            FOREIGN KEY(item_id) REFERENCES item(id))
-          ''')
+         ''')
 
 c.execute('''
           INSERT INTO person VALUES(1, 'pythoncentral')

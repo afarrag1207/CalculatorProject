@@ -120,7 +120,7 @@ new_person6 = Person(first_name = 'Tony',
                      address = '1662 Kinney Street',
                      town = 'Wolfden'
                      )
-session.add_all([new_person4, new_person5, new_person6])
+session.add(new_person4, new_person5, new_person6)
 session.commit()
 
 
@@ -214,7 +214,7 @@ session.commit()
 
 # Deleting data
 i = session.query(Item).filter(Item.name == 'Monitor').one()
-i
+
 session.delete(i)
 session.commit()
 
