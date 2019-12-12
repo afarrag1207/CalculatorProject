@@ -59,11 +59,18 @@ class Order(Base):
     Order_id = Column(Integer, ForeignKey('order.id'))
     # creates the relationship between the Item and order.  backref adds a property to the Item class to retrieve orders
     order = relationship("Item", backref="Order")
+class OrderLine(Base):
+    __tablename__ = 'order_lines'
+    id = Column(Integer(), primary_key=True)
+    order_id = Column(Integer(), ForeignKey('orders.id'))
+    item_id = Column(Integer(), ForeignKey('items.id'))
+    quantity = Column(SmallInteger())
+    item = relationship("Item")
 
 # this creates all tables in the engine, equivalent to "create table"
-Base.metadada.bind = engine
-
-Base.metadada.bind = engine
+Base.metadata.drop_all(engine)
+Base.metadata.create_all(engine)
+Base.metadata.bind = engine
 
 # Creating the session
 SQLSession = sessionmaker(bind=engine)
