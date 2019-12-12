@@ -19,12 +19,11 @@ c.execute('''
           (id INTEGER PRIMARY KEY ASC, name varchar(250) NOT NULL)
           ''')
 c.execute('''
-          CREATE TABLE Order 
+          CREATE TABLE Order
           (id INTEGER PRIMARY KEY ASC, Line_item1 varchar(250), Line_item2 varchar(250),
            Line_item3 varchar(250) NOT NULL, person_id INTEGER NOT NULL,
-           FOREIGN KEY(item_id) REFERENCES item(id))
+           FOREIGN KEY(person_id) REFERENCES person(id))
           ''')
-
 c.execute('''
           INSERT INTO person VALUES(1, 'pythoncentral')
           ''')
