@@ -11,7 +11,4 @@ DATABASE_CONNECTION_URI = f'postgresql+psycopg2://{user}:{password}@{host}:{port
 
 # NOTE: F-strings used for formatting strings (as shown above) can only be used with Python3.6
 
-POSTGRES_USER=test
-POSTGRES_PASSWORD=password
-POSTGRES_HOST=postgres  # this is referring to the postgres Docker container that we are connecting to
-POSTGRES_DB=example
+
