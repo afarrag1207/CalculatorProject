@@ -11,3 +11,7 @@ class Cats(db.Model):
     name = db.Column(db.String(100))
     price = db.Column(db.Integer)
     breed = db.Column(db.String(100))
+
+# the db function is being called from the init.py file.
+# that is how the db.create_all() function knows which classes/tables to create in the database.
+
