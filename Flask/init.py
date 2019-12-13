@@ -13,4 +13,6 @@ def create_app():
     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     flask_app.app_context().push()
     db.init_app(flask_app) # This line links the database with the flask app
+    db.create_all()
     return flask_app
+
