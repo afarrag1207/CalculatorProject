@@ -1,5 +1,4 @@
 # src/app.py
-
 from flask import Flask
 
 from .config import app_config
