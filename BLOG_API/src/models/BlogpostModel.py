@@ -1,6 +1,7 @@
 # src/models/BlogpostModel.py
 from . import db
 import datetime
+from marshmallow import fields, Schema
 
 
 class BlogpostModel(db.Model):
@@ -36,7 +37,7 @@ class BlogpostModel(db.Model):
 
     def delete(self):
         db.session.delete(self)
-        db.session.commit()
+        de.session.commit()
 
     @staticmethod
     def get_all_blogposts():
